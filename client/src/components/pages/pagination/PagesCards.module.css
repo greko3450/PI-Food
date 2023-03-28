@@ -1,0 +1,54 @@
+.pagesCards {
+  display: flex;
+  /* background-color: lightblue; */
+  justify-content: center;
+  color: #915f5f;
+  
+  flex-wrap: wrap;
+  
+}
+
+.botton {
+  color: aquamarine;
+  position: relative;
+  top: 17px;
+  right: -357px;
+  height: 28px;
+}
+.pagesCard {
+  margin: 85px 24px;
+}
+
+.pagesTextTitulo {
+  background-color: #85603538;
+  border-radius: 49px;
+  width: 240px;
+  height: 35px;
+  padding: 30px;
+  font-family: cursive;
+  margin: -14px 24px;
+}
+
+.pagesTextTitulo:hover {
+  background-color: rgb(215, 202, 130);
+}
+
+.pagesText {
+  
+  font-family: cursive;
+  
+  border-radius: 49px;
+  width: 240px;
+  height: 35px;
+  padding: 30px;
+  font-family: cursive;
+  margin: -14px 24px;
+}
+
+.imgs {
+  height: 325px; 
+  width: 325px;
+  border-radius: 50px;
+  box-shadow: 17px -11px 44px rgb(44 56 51 / 64%);
+}
+

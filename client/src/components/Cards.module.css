@@ -1,0 +1,37 @@
+.cardsStyle {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  flex-wrap: wrap;
+
+  /* text-decoration: none; */
+}
+
+.cardHeader {
+  margin: 85px 24px;
+  
+}
+
+.text {
+  font-family: cursive;
+  border-radius: 82px;
+  width: 414px;
+  height: 35px;
+  padding: 30px;
+  margin: 8px 32px;
+  color: #ad3722ad;
+  background: #3f6e4936;
+}
+
+.text:hover {
+  text-align: center;
+    font-family: emoji;
+    color: teal;
+    height: 10px;
+}
+.cardImg {
+  height: 392px;
+  width: 449px;
+  border-radius: 50px;
+  box-shadow: 14px -11px 44px rgb(44 56 51 / 64%);
+}

@@ -1,0 +1,33 @@
+/* .inputContainer {
+  background: linear-gradient(49deg, #c5a73f, transparent);
+  form {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+} */
+
+.inputContainer {
+  
+  background: linear-gradient(49deg, #c5a73f, transparent);
+}
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+ .inputStyle {
+  margin: 30px 61px;
+  margin-left: 53px;
+  width: 389px;
+  height: 69px;
+  border-radius: 18px;
+  border-color: #aed7c4;
+}
+
+  
+
+/* .formStyle {
+  width: 80%;
+} */

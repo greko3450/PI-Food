@@ -1,0 +1,34 @@
+.divStyle {
+  background-color: rgb(183 164 104 / 99%);
+  border-radius: 41px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 253px;
+  padding-right: 30px;
+  justify-content: flex-end;
+  opacity: 0.4;
+}
+
+.imgStyle {
+  background-image: url("../img/cocina.jpg");
+  background-repeat: no-repeat;
+  background-size: 1226px 603px;
+  background-position: center top -28px;
+  opacity: 0.9;
+  border-radius: 41px;
+}
+
+  .searchStyle {
+    margin-right: 10px;
+  }
+  
+  .navLinkStyle {
+    text-decoration: none;
+    margin: 10px;
+    color:rgb(34, 145, 165);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    
+    
+  }
