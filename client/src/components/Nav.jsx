@@ -9,8 +9,8 @@ function Nav() {
     <nav >
       
       <SearchBar/>
-      <NavLink className={style.navLinkStyle} to="/">back</NavLink>
-      <NavLink className={style.navLinkStyle} to="/recipes/form">Created recipe</NavLink>
+      <NavLink className={style.navLinkStyle} to="/">Back</NavLink>
+      <NavLink className={style.navLinkStyle} to="/recipes/form">Create recipes</NavLink>
       <NavLink className={style.navLinkStyle} to="/">Landing</NavLink>
      
       

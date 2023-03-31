@@ -7,7 +7,7 @@ export const SEARCH_RECIPE_ERROR = "SEARCH_RECIPE_ERROR";
 export const CREATE_RECIPE = "CREATE_RECIPE"
 export const SEARCH_DIET = "SEARCH_DIET";
 //*************************************************** */
-export const NEW_CREATE_RECIPE = "NEW_CREATE_RECIPE"
+
 
 
 
@@ -49,19 +49,31 @@ export const createRecipe = (recipe) => {
     try {
       const response = await axios.post('http://localhost:3001/recipes', recipe);
       dispatch({
-        type: "CREATE_RECIPE",
+        type: CREATE_RECIPE,
         payload: response.data
       });
-      dispatch({
-        type: NEW_CREATE_RECIPE,
-        payload: response.data
-      })
+      
     } catch (error) {
       console.log(error);
     }
   };
 };
 
+// export const newcreateRecipe = () => {
+//   return async (dispatch, getState) => {
+//     try {
+//       const response = await axios.get('http://localhost:3001/recipes');
+//       const currentUser = getState().currentUser; // obtener información del usuario actual del estado global
+//       const createdRecipes = response.data.filter(recipe => recipe.userId === currentUser.id); // filtrar las recetas creadas por el usuario actual
+//       dispatch({
+//         type: NEW_CREATE_RECIPE,
+//         payload: createdRecipes
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// };
 
    
 export const searchDiet = () => {

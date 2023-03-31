@@ -7,7 +7,7 @@ const {Recipe, Diet} = require("../db");
 recipeRouter.get('/:id', async (req, res) => {
   const {id} = req.params;
   try {
-    //  detail = {}
+    
     let test = id.split('').some(e => isNaN(e))
       if(test){
        let detail = await Recipe.findOne({///VALIDO
@@ -16,8 +16,7 @@ recipeRouter.get('/:id', async (req, res) => {
                 },
               include: Diet
             })
-          // detail.id = parseInt(detail.id.replace(/-/g, ''), id);
-          // await  console.log(detail); // <-- imprimir detalles de la receta en consola
+        
           res.status(200).json(detail)
           
         } else {

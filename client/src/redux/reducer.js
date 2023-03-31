@@ -6,7 +6,9 @@ const initialState = {
   recipes: [],
   error: null,
   diets: [],
-  postRecipe: []
+  // postRecipe: [],
+  createRecipes: [],
+  
 }
 
  const reducer = (state = initialState, action) => {
@@ -14,7 +16,8 @@ const initialState = {
     case SEARCH_RECIPE_ALL:
       return {
         ...state,
-        recipeAll: action.payload
+        recipeAll: action.payload,
+        // recipes: action.payload 
       }
     case SEARCH_RECIPE_NAME:
       return {
@@ -29,14 +32,20 @@ const initialState = {
     case CREATE_RECIPE:
       return {
         ...state,
-        postRecipe: [...state.postRecipe, action.payload]
+        // postRecipe: [...state.postRecipe, action.payload],
+        createRecipes: [...state.createRecipes, action.payload]
       }
     case SEARCH_DIET:
       return {
         ...state,
         diets: action.payload 
       }   
-      
+    // case NEW_CREATE_RECIPE:
+    //   return {
+    //     ...state,
+    //     createRecipes:  action.payload
+
+    //   }  
        
     default: 
       return state

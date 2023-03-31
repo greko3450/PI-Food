@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
-
+      allowNull: false,
       primaryKey: true
     },
     name: {
@@ -17,15 +17,20 @@ module.exports = (sequelize) => {
     },
     summary: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: false
     },
     healthScore: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      validate: {
+        min: 0,
+        max: 100,
+      },
+      
     },
     steps: {
       type: DataTypes.ARRAY(DataTypes.JSON),
-      allowNull: true
+      allowNull: false
     },
     image: {
       type: DataTypes.STRING,

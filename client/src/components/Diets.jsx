@@ -1,33 +1,27 @@
-import React, { useState, useEffect }  from "react";
-import {useSelector, useDispatch} from "react-redux"
-import { Link } from "react-router-dom";
-import {searchDiet} from "../redux/actions.js"
 
-function Diets() {
-  
-  // const {diet} = useParams()
-  
-  let dispatch = useDispatch()
-  let diets = useSelector((state) => state.diets)
-  let [selectDiet, setSelecDiet] = useState("")
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { searchDiet } from "../redux/actions.js";
 
+function Diets(props) {
+  const dispatch = useDispatch();
+  const diets = useSelector((state) => state.diets);
+  const [selectedDiet, setSelectedDiet] = useState("");
 
   useEffect(() => {
+    dispatch(searchDiet());
+  }, [dispatch]);
 
-    dispatch(searchDiet())
-  }, [dispatch])
-    
-  
-  let onDiet = (event) => {
-    setSelecDiet(event.target.value)
-
+  const handleSelectedDiet = (event) => {
+    //actualiza el estado local 
+    setSelectedDiet(event.target.value);
+    //maneja el evento de la dieta seleccionada por el uasrio
+    props.selectedDiet(event.target.value);
   }
-    
-  return(
+
+  return (
     <div>
-      {/* <button value={selectDiet} onClick={onDiet}>ingresar</button> */}
-      
-      <select value={selectDiet} onChange={onDiet}>
+      <select value={selectedDiet} onChange={handleSelectedDiet}>
         <option value="">Seleccione una dieta</option>
         {diets.map((diet, index) => (
           <option key={index} value={diet}>
@@ -35,28 +29,9 @@ function Diets() {
           </option>
         ))}
       </select>
-      {selectDiet && (
-        <Link to={`/recipes/recipe/${selectDiet}`}>
-          <button>Ver recetas</button>
-        </Link>
-      )}
-      
-    
-   
+      {/* {selectedDiet && <button>Ver recetas</button>} */}
     </div>
-  )
+  );
 }
 
-export default Diets
-    
-
-
-  
-
-
-
-
-
-
-
-
+export default Diets;

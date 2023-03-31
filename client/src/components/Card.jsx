@@ -11,21 +11,22 @@ function Card(props) {
     <div className={style.cardHeader}>
       <button>x</button>
       <br />
+        <h2 className={style.pagesTextTitulo}>{name}</h2>
       <NavLink to={`/recipes/${idRecipe}`}>
         <img className={style.cardImg}  src={image} alt={name} />
       </NavLink>
       
-        <h2 className={style.text}>{name}</h2>
       
-      {/* <h2 className={style.text}>{diet[0]}</h2> */}
+     <div className={style.dietContainer}>
      {
       diet.map((na, index) => (
         
-         <h2 key={index}>{na}</h2>
+         <h2 className={style.diet}  key={index}>{na}</h2>
         
       ))
+     
      }
-      
+     </div>  
     </div>
   )
 }

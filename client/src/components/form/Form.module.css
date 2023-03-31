@@ -17,12 +17,20 @@
   align-items: flex-end;
 }
 
+.inputName {
+  display: inline-block;
+  width: 200px;
+  margin-right: 10px;
+
+}
+
+
  .inputStyle {
-  margin: 30px 61px;
-  margin-left: 53px;
+  margin: 59px 53px;
+  margin-left: 66px;
   width: 389px;
   height: 69px;
-  border-radius: 18px;
+  border-radius: 15px;
   border-color: #aed7c4;
 }
 

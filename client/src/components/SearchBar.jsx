@@ -1,15 +1,19 @@
 import React, {useState}from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { searchRecipe } from "../redux/actions";
+
 import style from "./Nav.module.css"
 
 
 
   function SearchBar() {
+
+    const navigate = useNavigate();
     //Maneja el estado global
      const dispatch = useDispatch()
  
-     // se encraga de actualizar el estado de una accion
+     
      const error = useSelector(state => state.error);
      
      const [searchName, setSearchName] = useState("")
@@ -17,6 +21,7 @@ import style from "./Nav.module.css"
      
      let onChange = () => {
       dispatch(searchRecipe(searchName))
+      navigate('/recipes/searchRecipe?name=' + searchName);
   
     }
   

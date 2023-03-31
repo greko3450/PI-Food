@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { useDispatch } from "react-redux";
 import { createRecipe } from "../../redux/actions";
-import style from "./Form.module.css";
+import stilo from "./Form.module.css";
 import { diets } from './diets.js';
 function Form() {
   const dispatch = useDispatch();
@@ -18,14 +18,14 @@ function Form() {
     name: ""
   })
   
-  
+
   let errorValidate = () => {
-    if (!isNaN(form.name)) {
-      setError({ ...error, name: "" });
+    if (form.name === "" || !form.name.split("").every(char => isNaN(char))) {
+      setError({...error, name:"El campo Name debe contener solamente letras."});
     } else {
-      setError({ ...error, name: "El campo Name debe ser un número" });
+      setError("");
     }
-  };
+  }
 
   let handleOnchange = (event) => {
     if (event.target.name === "steps") {
@@ -44,6 +44,7 @@ function Form() {
         [event.target.name]: event.target.value
       });
     }
+    errorValidate()
   };
   
   
@@ -57,20 +58,21 @@ function Form() {
   }
 
   return(
-    <div className={style.inputContainer}>
-      <form className={style.formStyle} onSubmit={handleSubmit}>
+    <div className={stilo.inputContainer}>
+      <form className={stilo.formStyle} onSubmit={handleSubmit}>
         <label htmlFor="name">Name
-        <input type="text" id="name" name="name" value={form.name} onChange={handleOnchange} />
+        <input className={stilo.inputName} type="text" id="name" name="name" value={form.name} onChange={handleOnchange} />
+        {/* {error.name !== "" ?  <p>{error.name}</p> : ""} */}
         {error.name && <p>{error.name}</p>}
         </label>
         <label  htmlFor="summary">Summary
-        <input className={style.inputStyle} type="text" id="summary" name="summary" value={form.summary} onChange={handleOnchange} maxLength={225}/>
+        <input className={stilo.inputStyle} type="text" id="summary" name="summary" value={form.summary} onChange={handleOnchange} maxLength={225}/>
         </label>
         <label  htmlFor="healthScore">healthScore
         <input type="text" id="healthScore" name="healthScore" value={form.healthScore} onChange={handleOnchange} />
         </label>
         <label htmlFor="steps">steps
-        <input className={style.inputStyle} type="text" id="steps" name="steps" value={form.steps} onChange={handleOnchange} maxLength={2500}/>
+        <input className={stilo.inputStyle} type="text" id="steps" name="steps" value={form.steps} onChange={handleOnchange} maxLength={2500}/>
         </label>
 
         <label htmlFor="image">image
@@ -88,7 +90,7 @@ function Form() {
       
    
   
-    <button className={style.buttonStyle} type="submit">Create Recipe</button>
+    <button className={form.buttonStyle} type="submit">Create Recipe</button>
   </form>
 </div>
 

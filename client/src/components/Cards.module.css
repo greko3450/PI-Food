@@ -1,37 +1,54 @@
 .cardsStyle {
   display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
+  color: #915f5f;
+  margin: 156px 48px;
   flex-wrap: wrap;
-
+  }
+  
   /* text-decoration: none; */
-}
+
 
 .cardHeader {
-  margin: 85px 24px;
+  width: calc(48.33% - -13px);
+  margin-bottom: 73px;
   
 }
 
-.text {
-  font-family: cursive;
-  border-radius: 82px;
-  width: 414px;
-  height: 35px;
+.pagesTextTitulo {
+  background-color: #85603538;
+  border-radius: 72px;
+  color: #915f5f;
+  width: 344px;
+  height: 57px;
   padding: 30px;
-  margin: 8px 32px;
-  color: #ad3722ad;
-  background: #3f6e4936;
+  font-family: cursive;
+  margin: 25px 65px;
+ 
 }
 
-.text:hover {
-  text-align: center;
-    font-family: emoji;
-    color: teal;
-    height: 10px;
-}
+
+
+
 .cardImg {
   height: 392px;
   width: 449px;
   border-radius: 50px;
   box-shadow: 14px -11px 44px rgb(44 56 51 / 64%);
+}
+
+.dietContainer {
+  display: flex;
+    color: #262a26;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 13px 76px;
+}
+
+.diet {
+  background-color: #3a292921;
+  border-radius: 50px;
+  padding: 5px 17px;
+  margin: 5px;
+  font-size: 22px;
+  font-family: fangsong;
 }

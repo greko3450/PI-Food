@@ -1,20 +1,26 @@
-import React from "react";
+// import React from "react";
 import CardRecipes from "./CardRecipes";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 // import { useEffect } from "react";
-// import { createRecipe } from "../../redux/actions";
+import { searchRecipeAll } from "../../redux/actions";
 
 
-function CardsRecipe() {
+function CardsRecipes() {
 
-  const postRecipe = useSelector((state) => state.postRecipe);
-  
+  const postRecipe = useSelector((state) => state.createRecipes);
+  const dispatch = useDispatch()
+
+  console.log(postRecipe);
+  useEffect(() => {
+    dispatch(searchRecipeAll())
+  }, [dispatch])
 
 
   return(
     <div>
       {
-       postRecipe?.map(created => {
+       postRecipe.map(created => {
           
           let {id, name, image} = created;
           return (
@@ -33,5 +39,5 @@ function CardsRecipe() {
   )
 }
 
-export default CardsRecipe;
+export default CardsRecipes;
 
