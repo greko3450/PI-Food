@@ -1,9 +1,12 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    background-color: #f9f7f7;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f7f7;
+  margin-top: 27px;
+  height: 1098px;
+  flex-wrap: wrap;
+}
+
   
   .text {
     width: 56%;

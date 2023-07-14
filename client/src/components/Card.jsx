@@ -1,34 +1,34 @@
 import React from "react";
-import { NavLink} from "react-router-dom";
-import style from "./Cards.module.css";
+import { NavLink } from "react-router-dom";
 
+import pages from "./Cards.module.css";
 
-function Card(props) {
-  
-  
-  let {image, name, idRecipe, diet} = props;
-  return(
-    <div className={style.cardHeader}>
-      <button>x</button>
-      <br />
-        <h2 className={style.pagesTextTitulo}>{name}</h2>
-      <NavLink to={`/recipes/${idRecipe}`}>
-        <img className={style.cardImg}  src={image} alt={name} />
-      </NavLink>
-      
-      
-     <div className={style.dietContainer}>
-     {
-      diet.map((na, index) => (
+class Card extends React.Component{
+  // eslint-disable-next-line
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    let {idRecipe, name, image, diets, healthScore} = this.props
+    return(
+      <div className={pages.dietsContainer}>
         
-         <h2 className={style.diet}  key={index}>{na}</h2>
-        
-      ))
-     
-     }
-     </div>  
-    </div>
-  )
+        <NavLink className={pages.pagesNav} to={`/recipes/${idRecipe}`}>
+        <h1 className={pages.pagesTextTitulo}>{name}</h1>
+        </NavLink>
+        <img  src={image} alt={name} />
+          <div className={pages.dietsSpan}>
+          {diets?.map((diet, index) => (
+            <span className={pages.dietss} key={index} >{diet}</span>
+            ))}
+          </div>
+            <p className={pages.healthScore}>Health-scores:<br/>{healthScore}</p>  
+           
+      </div>
+    )
+  }
 }
-
+       
+          
 export default Card;

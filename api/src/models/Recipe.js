@@ -5,9 +5,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define("recipe", {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.UUID, 
       defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
+
       primaryKey: true
     },
     name: {
@@ -21,27 +21,23 @@ module.exports = (sequelize) => {
     },
     healthScore: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      validate: {
-        min: 0,
-        max: 100,
-      },
-      
+      allowNull: false
     },
     steps: {
       type: DataTypes.ARRAY(DataTypes.JSON),
-      allowNull: false
+      allowNull: true,
+      
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     created: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
     },
- 
+    
   }, {
     timestamps: true,
     freezeTableName: true,
@@ -49,7 +45,7 @@ module.exports = (sequelize) => {
     
   });
 };
-       
+         
 
 
 

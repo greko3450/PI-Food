@@ -26,7 +26,6 @@ function Detail(){
       <NavLink to="/recipes">
       <button className={detalle.boton}>Home</button>
       </NavLink>
-      {/* <div className={detalle.letter}>{detail.name?.charAt(0).toUpperCase()}</div> */}
       <div className={detalle.text}>
         <h3>Name: {detail.name}</h3>
         <p>Summary of the dish. {detail.summary}</p>
@@ -40,3 +39,4 @@ function Detail(){
 }
 
 export default Detail;
+      

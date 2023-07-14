@@ -1,54 +1,133 @@
-.cardsStyle {
+.pagesCards {
   display: flex;
-  color: #915f5f;
-  margin: 156px 48px;
   flex-wrap: wrap;
-  }
-  
-  /* text-decoration: none; */
+  color: #915f5f;
+  justify-content: space-between;
+  /* margin: 140px 42px; */
+}
 
+.errorStyle {
+  display: flex;
+  color: red;
+  height: 381px;
+  margin: 222px 268px 171px 268px;
+  background-color: blanchedalmond;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
 
-.cardHeader {
-  width: calc(48.33% - -13px);
-  margin-bottom: 73px;
+}
+.errorStyle p, 
+.errorStyle h3 {
+  font-size: 16px;
+  font-family: cursive;
+  margin-top: -11px;
+  color: red;
+  position: relative;
+  top: 73px;
   
 }
 
+.errorStyle img {
+  height: 200px;
+    width: 200px;
+    position: relative;
+    top: 81px;
+}
+  
 .pagesTextTitulo {
   background-color: #85603538;
-  border-radius: 72px;
+  border-radius: 43px;
   color: #915f5f;
-  width: 344px;
-  height: 57px;
-  padding: 30px;
+  width: 89%;
+  height: 8%;
+  padding: 30px 11px 34px 14px;
   font-family: cursive;
-  margin: 25px 65px;
- 
+  margin: -32px 0px -18px 5px;
+  /* font-size: 20px; */
+  font-size: 1.3vw;
+  /* font-size: 1rem;*/
+  }
+  
+  @media screen and (max-width: 576px) {
+    .pagesTextTitulo {
+      width: 84%;
+      font-size: 14px;
+    }
+  }
+
+
+.pagesNav {
+  
+  text-decoration: none;
+}
+
+.dietsContainer {
+  color: #915f5f;
+  width: calc(36.33% - 108px);
+  height: 560px;
+  margin-left: 34px;
+  margin-right: 34px;
+  position: relative;
+  top: 200px;
 }
 
 
-
-
-.cardImg {
-  height: 392px;
-  width: 449px;
-  border-radius: 50px;
-  box-shadow: 14px -11px 44px rgb(44 56 51 / 64%);
+.dietsContainer img {
+  height: 39%;
+    width: 87%;
+    border-radius: 50px;
+    box-shadow: 17px -11px 44px rgb(44 56 51 / 64%);
+    padding: 15px 15px 225px 15px;
+    background: #e2ddc6;
 }
 
-.dietContainer {
+.dietsSpan {
   display: flex;
-    color: #262a26;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 13px 76px;
+  color: #915f5f;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 15px;
+  margin-right: 15px;
+ 
+  
 }
 
-.diet {
-  background-color: #3a292921;
-  border-radius: 50px;
-  padding: 5px 17px;
-  margin: 5px;
-  font-size: 22px;
-  font-family: fangsong;
+
+.dietss {
+  background-color: #ffffff;
+    border-radius: 50px;
+    padding: 4px 15px;
+    margin: 4px;
+    font-size: 13px;
+    font-family: cursive;
+    box-sizing: border-box;
+    position: relative;
+    top: -215px;
+}
+
+.healthScore {
+  margin-top: -213px;
+  
+ }
+
+ @media (max-width: 576px) {
+  .pagesCards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .dietsContainer {
+    width: calc(65% - 88px);
+    height: 504px;
+    margin: -1%;
+  }
+  .dietsContainer img {
+   height: 28%;
+    width: 86%;
+  }
+  .dietss {
+    margin: 1px;
+    font-size: 9px;
+  }
 }

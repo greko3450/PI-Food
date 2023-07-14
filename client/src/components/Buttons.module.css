@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 45px;
+}
+
+.container label {
+  color: #b68b3f;
+  margin-left: -15px;
+  margin-right: 5px;
+
+}
+
+.container select {
+  margin-right: 61px;
+  background-color: #fcfdfc;
+  border-radius: 7px;
+  border-color: #b3b4a6;
+  border-top-width: 4px;
+  border-left-width: 4px;
+}
+
+.container option {
+  background-color: #dedecad4;
+}
+.container button {
+  background-color: #dedecad4;
+  border-end-end-radius: 10px;
+  border-start-start-radius: 16px;
+  color: #8c5d5c;
+  border-color: aliceblue;
+}
+@media screen and (max-width: 576px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container label,
+  .container select,
+  .container option {
+    display: flex;
+    margin: 1px;
+  }
+}

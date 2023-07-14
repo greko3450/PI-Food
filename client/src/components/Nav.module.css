@@ -1,5 +1,4 @@
 .divStyle {
-  background-color: rgb(183 164 104 / 99%);
   border-radius: 41px;
   display: flex;
   flex-direction: row;
@@ -7,28 +6,89 @@
   height: 253px;
   padding-right: 30px;
   justify-content: flex-end;
-  opacity: 0.4;
 }
-
+  
+@media screen and (max-width: 576px)  {
+  .divStyle {
+    display: flex;
+    
+   
+  }
+}
 .imgStyle {
-  background-image: url("../img/cocina.jpg");
+  background-image: url("../img/cocina2.jpg");
   background-repeat: no-repeat;
-  background-size: 1226px 603px;
+  /* background-size: 1226px 603px; */
+  background-size: 102% 233%;
   background-position: center top -28px;
   opacity: 0.9;
   border-radius: 41px;
 }
 
-  .searchStyle {
-    margin-right: 10px;
+.navLinkStyle {
+  text-decoration: none;
+  margin: 10px;
+  color: rgb(231 239 231);
+  font-family: cursive;
+  /* font-size: 20px; */
+  font-size: 1.8vw;
+  text-shadow: 0px 1px 6px #000000, 0px -1px 20px #c5bc9a, 1px -1px 0 #555054, -1px 1px 10px #8b7025;
+    position: relative;
+    top: 12px;
   }
   
-  .navLinkStyle {
-    text-decoration: none;
-    margin: 10px;
-    color:rgb(34, 145, 165);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    
-    
+@media screen and (max-width: 576px) {
+    .navLinkStyle {
+      font-size: 17px;
+      top: 52px;
   }
+    .buttonStyle {
+      
+      height: 11%;
+      width: 7%;
+  
+  }
+  
+}
+
+.searchStyle {
+    margin-right: 11px;
+    margin-top: 317px;
+    background-color: rgb(255 255 255);
+    border-radius: 11px;
+    border-color: #e7efe7;
+    border-top-width: 4px;
+    border-left-width: 4px;
+    height: 9%;
+    width: 17%;
+  }
+
+  @media screen and (max-width: 576px) {
+    .searchStyle {
+      width: 191px;
+    }
+  }
+  .buttonStyle {
+    margin-top: 314px;
+    color: #8c5d5c;
+    border-radius: 10px;
+    border-color: aliceblue;
+    background-color: #dfe0cf;
+    height: 11%;
+    width: 6%;
+
+  }
+
+  @media screen and (max-width: 576px) {
+    
+    .buttonStyle {
+      height: 11%;
+      width: 15%;
+      margin-right: -21px;
+  
+    }
+  
+  }
+
+
+  

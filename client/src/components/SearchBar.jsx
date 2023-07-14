@@ -1,53 +1,40 @@
 import React, {useState}from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { searchRecipe } from "../redux/actions";
-
+import { searchRecipe} from "../redux/actions";
 import style from "./Nav.module.css"
 
-
-
   function SearchBar() {
-
     const navigate = useNavigate();
-    //Maneja el estado global
-     const dispatch = useDispatch()
- 
-     
-     const error = useSelector(state => state.error);
-     
-     const [searchName, setSearchName] = useState("")
- 
-     
-     let onChange = () => {
+    const dispatch = useDispatch()
+    const [searchName, setSearchName] = useState("")
+    
+    let handleSearch = () => {
+      // e.preventDefault()
       dispatch(searchRecipe(searchName))
-      navigate('/recipes/searchRecipe?name=' + searchName);
-  
+      navigate('/recipes?name=' + searchName + " recipe in the of");
+     
     }
-  
-     let handleSearch = (event) => {
+    
+    let handleOnChange = (event) => {
       setSearchName(event.target.value)
-     }
-  
-     return(
-       <div className={style.imgStyle}>
-       <div className={style.divStyle}>
+    }
+ 
+    const handleKeyPress = (event) => {
+    if(event.key === "Enter") {
+      // event.preventDefault()
+      handleSearch()
+      }
+    }
+
+    return(
+      <div className={style.imgStyle}>
+      <div className={style.divStyle}>
+         <input  className={style.searchStyle} type="text"  value={searchName} placeholder="end recipe" onChange={handleOnChange} onKeyPress={handleKeyPress} required/>
+         <button className={style.buttonStyle} onClick={handleSearch}>ingresar</button>
+      </div>
+      </div>
+  )  
+}
          
-         <input  className={style.searchStyle}  type="text"  value={searchName} placeholder="end recipe" onChange={handleSearch}/>
-         <button onClick={onChange}>ingresar</button>
-         {error && <h3>{error}</h3>}
-     
-       </div>
- 
- </div>
- 
-   )  
-   }
-     
- 
- export default SearchBar;
-   
-    
- 
-  
-    
+export default SearchBar;

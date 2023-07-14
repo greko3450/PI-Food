@@ -2,8 +2,10 @@ const express = require("express");
 const recipeRouter = express.Router();
 const {Op} = require("sequelize")
 const {Recipe, Diet} = require("../db");
+const savedApi = require("../controller/index.js")
+savedApi()
 
-//ruta get por params
+// ruta get por params
 recipeRouter.get('/:id', async (req, res) => {
   const {id} = req.params;
   try {
@@ -24,10 +26,11 @@ recipeRouter.get('/:id', async (req, res) => {
         }
         
       } catch (error) {
-        console.log(error);
-        res.status(500).json({names: "el error"});
+        res.status(500).json({message: error.message});
+        
       }
 });
+
 
 //ruta get por query
 recipeRouter.get("/", async (req, res) => {
@@ -44,27 +47,34 @@ recipeRouter.get("/", async (req, res) => {
         },
         include: Diet,
       });
-    } else {
+    } 
+else {
       recipes = await Recipe.findAll({
-        include: Diet,
+        include: {
+          model: Diet,
+
+        }
       });
     }
-
     if (recipes.length > 0) {
       res.status(200).json(recipes);
     } else {
       res.status(404).json({ message: "Recipe not found" });
     }
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({message: error.message});
   }
 });
 //ruta Post
 
 recipeRouter.post("/", async (req, res) => {
-  const { name, summary, healthScore, steps, image, diets } = req.body;
-
+  
   try {
+    const { name, summary, healthScore, steps, image, diets } = req.body;
+    const nameExisting = await Recipe.findOne({where: {name}});
+    if(nameExisting) {
+     return res.status(400).json({message: `"Recipe ${name} already exists`})
+    }
     const newRecipe = await Recipe.create({
       name,
       summary,
@@ -79,11 +89,13 @@ recipeRouter.post("/", async (req, res) => {
         return dietInstance;
       }));
       await newRecipe.addDiets(dietInstances);
+    } else {
+      res.status(404).json({message: "Not create recipe"})
     }
   
     res.status(200).json(newRecipe);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ message: error.message });
   }
 })
 

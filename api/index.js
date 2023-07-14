@@ -20,10 +20,10 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js'); //*esto es de db importa de db
 // const fetchData = require("./src/controller/index.js");
-const savedApi = require('./src/controller/index.js');
+// const {savedApi} = require('./src/controller/index.js');
 // Syncing all the models at once.
-conn.sync({ force: false}).then(async() => {
- await savedApi()
+conn.sync({ force: false}).then(() => {
+
 //  console.log(savedApi().then((d) => console.log(d)));
 
   server.listen(3001, () => {

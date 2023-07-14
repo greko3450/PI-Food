@@ -1,0 +1,40 @@
+.footer {
+  background-color: #e2ddc6;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.footer ul {
+  display: flex;
+}
+
+.footer li {
+  display: flex;
+  margin: 29%;
+  font-size: 3.5vw;
+  position: relative;
+  right: 421%;
+}
+
+
+.footers {
+  background-color: #e2ddc6;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 255px;
+}
+  
+.footers ul {
+  display: flex;
+}
+
+.footers li {
+  display: flex;
+  margin: 29%;
+  font-size: 3.5vw;
+  position: relative;
+  right: 421%;
+}
