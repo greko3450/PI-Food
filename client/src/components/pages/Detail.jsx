@@ -32,8 +32,8 @@ function Detail(){
         <p>Healthy food level health score. {detail.healthScore}</p>
         <p>Step by Step. {detail.steps}</p>
         <p>Types of diet. {detail.diets?.map(diet => diet.name).join(" ")}</p>
+        <img src={detail.image} alt={detail.name} />
       </div>
-      <img className={detalle.image} src={detail.image} alt={detail.name} />
     </div>
   )
 }
